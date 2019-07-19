@@ -1,0 +1,150 @@
+@charset "ISO-8859-1";
+
+
+
+body {
+  background-color: #ffffff;
+  font-family: sans-serif;
+}
+
+header {
+  text-align: center;
+  margin-top: 5px;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: Helvetica;
+  text-align: center;
+  padding: 0px;
+  margin: 0;
+}
+
+label {
+  font-size: 19px;	 
+  font-family: Calibri;
+}
+
+label.center {
+  font-size: 19px;	 
+  font-family: Calibri;
+  text-align: center;
+}
+
+p {
+  font-size: 15px;
+  padding: 10px;
+  text-align: center;  
+}
+
+table {    
+  width: 100%;  
+  margin:auto;
+}
+
+table.crumb {    
+  width: 65%;  
+  margin:auto;
+}
+
+
+table.header1 { 
+  width: 100%;
+  text-align: right; 
+  background: #28b5d2;
+}
+
+table.header2 { 
+  width: 100%;
+  text-align: center; 
+}
+
+table.home { 
+  width: 60%;
+  text-align: center; 
+}
+
+table.items { 
+  width: 100%;  
+  margin:auto;
+}
+
+table.login {    
+  width: 25%;  
+  text-align: center;
+}
+
+td.cartSpace { 
+  width: 10%; 
+}
+
+td.centerAlign {  
+  text-align: right; 
+}
+
+td.error {  
+  color: red; 
+}
+
+td.header { 
+  width: 95%;
+  text-align: center; 
+}
+
+td.item {
+  width: 175px;
+  font-size: 14px;
+  font-family: Calibri;
+  text-align: center; 
+  color: #000000; 
+}
+
+td.leftCart { 
+  width: 40%;
+  text-align: left; 
+}
+
+td.popDesc { 
+  width: 60%;
+  text-align: left; 
+  font-family: Calibri;
+}
+
+td.popPrice { 
+  width: 40%;
+  text-align: left; 
+  font-family: Calibri;
+}
+
+td.right { 
+  width: 5%;
+  text-align: right; 
+}
+
+td.rightAlign {  
+  text-align: right; 
+}
+
+td.rightCart { 
+  width: 40%;
+  text-align: right; 
+}
+
+td.space {
+  width: 50px; 
+}
+
+tr.thumbnail {
+  height: 125px;
+  width: 125px;	
+}
+
+
+
+
+
+
+
+
+
+
