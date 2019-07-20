@@ -6,6 +6,8 @@
 	//String table = (String) request.getAttribute("table");
 	ReadCartQuery qry = new ReadCartQuery("store", "root","Tbillin$j1");
 	qry.doRead();
+	
+	
 %>
     
     
@@ -21,20 +23,23 @@
 <form name="order" action="order.jsp">
 	<table class="pop">
 		<tr>
-			<td colspan="5">		
-				<h1>Order Checkout</h1> <img src="images/payment.jpg" align="center" height="150" width="200" /> 
+			<td colspan="5">
+			<img src="images/payment.jpg" class="center" height="100" width="150" />		
+				<h2>Order Checkout</h2>  
 			</td>
 		</tr>
 		
 	</table>	
-	<table>		
+	<table border='1'>	
 		<tr>
-			<td colspan="4">
-				<h3>Shipping Information</h3>
+			<td colspan="5"> 
+				<h3>Shipping Information</h3> 
 			</td>
 		</tr>
+	</table>
+	<table>
 		<tr>
-			<td>
+			<td class="checkout">
 				First Name: 
 			</td>
 			<td>
@@ -67,7 +72,7 @@
 			</td>		
 		</tr>
 	</table>
-	<table>
+	<table border='1' class="checkout">
 		<tr>
 			<td>
 				City: 
@@ -143,17 +148,19 @@
 				<input type="number" id="zip" maxlength="5"/>
 			</td> 
 		</tr>
+	</table>
+	<table border='1'>
 		<tr>
 			<td colspan="8">
 				<hr>
 			</td>
 		</tr>
 				<tr>
-			<td colspan="4">
+			<td colspan="5">
 				<h3>Billing Information</h3>
 			</td>
 		<tr>
-			<td>
+			<td colspan="5">
 				<input type="checkbox" name="sameAdd" value="sameAdd">Same as Shipping<br>				
 			</td>
 		</tr> 	
@@ -193,7 +200,7 @@
 			</td>		
 		</tr>
 	</table>
-	<table>
+	<table border='1'>
 		<tr>
 			<td>
 				City: 
@@ -275,7 +282,7 @@
 			</td>
 		</tr>
 	</table>
-	<table> 	
+	<table border='1'> 	
 		<tr>
 			<td colspan="4">
 				<h3>Payment Information</h3>
@@ -314,6 +321,7 @@
 			</td> 						 
 		</tr>
 	</table>
+	
 </form>
 </body>
 </html>
