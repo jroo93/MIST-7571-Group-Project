@@ -62,8 +62,8 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//pull the fields from the form
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		String username = request.getParameter("uname");
+		String password = request.getParameter("pword");
 
 		//encrypt the password to check against what's stored in DB
 		PasswordUtil pu = new PasswordUtil(); 
