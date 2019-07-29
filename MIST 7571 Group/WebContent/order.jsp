@@ -33,13 +33,7 @@
 		</td>
 		<td width=35%></td>		
 	</tr>
-	<tr>
-		<td width=35%></td>		
-		<td>
-			<%= qry.getOrderTable() %>
-		</td>
-		<td width=35%></td>		
-	</tr>
+
 	<tr></tr>
 
 	</table>
