@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Order Checkout</title>
+	<link rel="stylesheet" type="text/css" href="shopping.css" /> 
+	
+	<script type="text/javascript">
+		function sameAddress()
+		{
+			var cb = document.getElementById("sameAdd");
+			if (cb.checked == true){
+				document.getElementById('fName').value = document.getElementById('fNameShip').value;
+				document.getElementById('lName').value = document.getElementById('lNameShip').value;
+				document.getElementById('add1').value = document.getElementById('add1Ship').value;
+				document.getElementById('add2').value = document.getElementById('add2Ship').value;
+				document.getElementById('city').value = document.getElementById('cityShip').value;
+				document.getElementById('state').value = document.getElementById('stateShip').value;
+				document.getElementById('zip').value = document.getElementById('zipShip').value;
+			}
+			else{
+				document.getElementById('fName').value ="";
+				document.getElementById('lName').value = "";
+				document.getElementById('add1').value = "";
+				document.getElementById('add2').value = "";
+				document.getElementById('city').value = "";
+				document.getElementById('state').value = "";
+				document.getElementById('zip').value = "";
+			} 
+
+		}
+		
+		function subTotal() 
+		{
+			var subTotal;
+				var price = parseInt(document.getElementById("price").value);
+				var qty = parseInt(document.getElementById("qty").value);
+			var orderTotal;	
+			
+			subTotal = 5.00*3.57;
+			document.getElementById("subTotal").value = subTotal.toFixed(2);
+		}
+		
+		
+			/* for (var i=0; i<0, i++)
+			{
+				orderTotal = subTotal;
+				
+			}
+		} */
+		
+/* 		function getCartTable()
+		{
+			
+			public String getCartTable() {		
+				String table = "";
+				table += "<table width=100%>";
+				Cart cart = new Cart();
+				
+				try {			
+					  while(this.results.next()) {
+						  cart = new Cart();
+							cart.setSKU(this.results.getInt("SKU"));
+							cart.setItemName(this.results.getString("ItemName"));
+							cart.setPrice(this.results.getDouble("Price"));
+							cart.setQty(this.results.getInt("Qty"));
+						
+						table += "<tr>";
+						table += "<td>";
+						table += cart.getSKU();
+						table += "</td>";
+						table += "<td>";
+						table += cart.getItemName();
+						table += "</td>";    
+						table += "<td>";
+						table += cart.getPrice();
+						table += "</td>";  
+						table += "<td>";
+						table += cart.getQty(); 
+						table += "</td>";
+
+						table += "</tr>";
+							
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
+				table += "</table>";
+				return table;
+			}
+		 */
+	
+		</script>
+</head>
+<body>
+
+<form name="order" id="order" action="order.jsp">
+
+		<table class="pop">
+		<tr>
+			<td colspan="5">
+			<img src="images/payment.jpg" class="center" height="100" width="150" />		
+				<h2>Order Checkout</h2>  
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				
+				
+				<input type="text" id="subTotal" name="subTotal" onload="subTotal()" value="" readonly />
+			</td>
+		</tr>
+	</table>	
+	<table>
+	<tr>
+	<td>
+	<table>	
+		<tr>
+			<td colspan="5"> 
+				<h3>Shipping Information</h3> 
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5">
+				<input type="checkbox" name="blank" style="display:none" /> <br>				
+			</td>
+		</tr> 	
+		<tr>
+			<td>
+				First Name: 
+			</td>
+			<td>
+				<input type="text" id="fNameShip" />
+			</td>		
+			<td>
+			</td>
+			<td>
+				Last Name: 
+			</td>
+			<td>
+				<input type="text" id="lNameShip" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Address Line1: 
+			</td>
+			<td>
+				<input type="text" id="add1Ship" name="add1Ship" />
+			</td>		
+		</tr>
+			
+		<tr>
+			<td>
+				Address Line2: 
+			</td>
+			<td>
+				<input type="text" id="add2Ship" />
+			</td>		
+		</tr>
+	</table>
+	<table class="checkout">
+		<tr>
+			<td>
+				City: 
+			</td>
+			<td>
+				<input type="text" id="cityShip" />
+			</td>
+			<td>
+			</td>		
+			<td>
+				State: 
+			</td>
+			<td>
+				<select id="stateShip">	
+					<option value="AL">AL</option>
+					<option value="AK">AK</option>
+					<option value="AZ">AZ</option>
+					<option value="AR">AR</option>
+					<option value="CA">CA</option>
+					<option value="CO">CO</option>
+					<option value="CT">CT</option>
+					<option value="DE">DE</option>
+					<option value="FL">FL</option>
+					<option value="GA">GA</option>
+					<option value="HI">HI</option>
+					<option value="ID">ID</option>
+					<option value="IL">IL</option>
+					<option value="IN">IN</option>
+					<option value="IA">IA</option>
+					<option value="KS">KS</option>
+					<option value="KY">KY</option>
+					<option value="LA">LA</option>
+					<option value="ME">ME</option>
+					<option value="MD">MD</option>
+					<option value="MA">MA</option>
+					<option value="MI">MI</option>
+					<option value="MN">MN</option>
+					<option value="MS">MS</option>
+					<option value="MO">MO</option>
+					<option value="MT">MT</option>
+					<option value="NE">NE</option>
+					<option value="NV">NV</option>
+					<option value="NH">NH</option>
+					<option value="NJ">NJ</option>
+					<option value="NM">NM</option>
+					<option value="NY">NY</option>
+					<option value="NC">NC</option>
+					<option value="ND">ND</option>
+					<option value="OH">OH</option>
+					<option value="OK">OK</option>
+					<option value="OR">OR</option>
+					<option value="PA">PA</option>
+					<option value="RI">RI</option>
+					<option value="SC">SC</option>
+					<option value="SD">SD</option>
+					<option value="TN">TN</option>
+					<option value="TX">TX</option>
+					<option value="UT">UT</option>
+					<option value="VT">VT</option>
+					<option value="VA">VA</option>
+					<option value="WA">WA</option>
+					<option value="WV">WV</option>
+					<option value="WI">WI</option>
+					<option value="WY">WY</option>					
+				</select>
+			</td>
+			<td>
+			</td>
+			<td>
+				Zip: 
+			</td>
+			<td>
+				<input type="text" id="zipShip" maxlength="5"/>
+			</td> 
+		</tr>
+	</table>
+	</td>
+	
+	<td width=60%>
+	
+	</td>
+	
+	</tr>
+	<tr> 
+		<td colspan="8">
+				<hr>
+		</td>
+	</tr> 
+	</table>
+	
+	<table>
+	<tr>
+	<td> 
+	<table> 	
+		<tr>
+			<td colspan="4">
+				<h3>Payment Information</h3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5">
+				<input type="checkbox" name="blank" style="display:none" /> <br>				
+			</td>
+		</tr> 
+		<tr>
+			<td>
+				Name on Card:
+			</td>
+			<td>
+				<input type="text" id="billName" />
+			</td> 
+		</tr>
+		<tr>
+			<td>
+				Card #:
+			</td>
+			<td>
+				<input type="text" id="cardNo" maxlength="16"/>
+			</td> 
+		</tr>	
+		<tr>
+			<td>
+				Exp Date:
+			</td>
+			<td>
+				<input type="text" id="expDt" value="mm/yyyy" maxlength="7"/>
+			</td> 
+		</tr>
+		<tr>
+			<td colspan="5">
+				<input type="text" name="blank" style="display:none" /> <br>				
+			</td>
+		</tr> 
+	</table>
+	</td>
+	<td>
+	<table>
+		<tr>
+			<td colspan="5">
+				<h3>Billing Address</h3>
+			</td>
+		<tr>
+			<td colspan="5">
+				<input type="checkbox" name="sameAdd" value="sameAdd" id="sameAdd" onclick="sameAddress();">Same as Shipping<br>				
+			</td>
+		</tr> 	
+			
+	
+		<tr>
+			<td>
+				First Name: 
+			</td>
+			<td>
+				<input type="text" id="fName" />
+			</td>		
+			<td>
+			</td>
+			<td>
+				Last Name: 
+			</td>
+			<td>
+				<input type="text" id="lName" />
+			</td>
+			<td width=30%>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Address Line1: 
+			</td>
+			<td>
+				<input type="text" id="add1" />
+			</td>		
+			<tr>
+			
+			<tr>
+			<td>
+				Address Line2: 
+			</td>
+			<td>
+				<input type="text" id="add2" />
+			</td>		
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>
+				City: 
+			</td>
+			<td>
+				<input type="text" id="city" />
+			</td>
+			<td>
+			</td>		
+			<td>
+				State: 
+			</td>
+			<td> <input type="text" id="state" name="state" size="2"/>
+			<!--  
+				<select>	
+					<option value="AL">AL</option>
+					<option value="AK">AK</option>
+					<option value="AZ">AZ</option>
+					<option value="AR">AR</option>
+					<option value="CA">CA</option>
+					<option value="CO">CO</option>
+					<option value="CT">CT</option>
+					<option value="DE">DE</option>
+					<option value="FL">FL</option>
+					<option value="GA">GA</option>
+					<option value="HI">HI</option>
+					<option value="ID">ID</option>
+					<option value="IL">IL</option>
+					<option value="IN">IN</option>
+					<option value="IA">IA</option>
+					<option value="KS">KS</option>
+					<option value="KY">KY</option>
+					<option value="LA">LA</option>
+					<option value="ME">ME</option>
+					<option value="MD">MD</option>
+					<option value="MA">MA</option>
+					<option value="MI">MI</option>
+					<option value="MN">MN</option>
+					<option value="MS">MS</option>
+					<option value="MO">MO</option>
+					<option value="MT">MT</option>
+					<option value="NE">NE</option>
+					<option value="NV">NV</option>
+					<option value="NH">NH</option>
+					<option value="NJ">NJ</option>
+					<option value="NM">NM</option>
+					<option value="NY">NY</option>
+					<option value="NC">NC</option>
+					<option value="ND">ND</option>
+					<option value="OH">OH</option>
+					<option value="OK">OK</option>
+					<option value="OR">OR</option>
+					<option value="PA">PA</option>
+					<option value="RI">RI</option>
+					<option value="SC">SC</option>
+					<option value="SD">SD</option>
+					<option value="TN">TN</option>
+					<option value="TX">TX</option>
+					<option value="UT">UT</option>
+					<option value="VT">VT</option>
+					<option value="VA">VA</option>
+					<option value="WA">WA</option>
+					<option value="WV">WV</option>
+					<option value="WI">WI</option>
+					<option value="WY">WY</option>					
+				</select>
+				-->
+			</td>
+			<td>
+			</td>
+			<td>
+				Zip: 
+			</td>
+			<td>
+				<input type="text" id="zip" maxlength="5"/>
+			</td> 
+		</tr>
+	</table>
+ 	</table>
+	
+	<table>
+		<tr>
+		</tr>
+		<tr>
+			<td>
+				<input type="submit" value="Submit Order" id="submitOrder"><br>
+			</td> 						 
+		</tr>
+	</table>
+	
+</form>
+
+</body>
+</html>

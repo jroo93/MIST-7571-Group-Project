@@ -78,6 +78,11 @@ td.cartSpace {
   width: 10%; 
 }
 
+td.checkout {    
+  width: 50%;  
+  font-size: 11px; 
+}
+
 td.centerAlign {  
   text-align: right; 
 }

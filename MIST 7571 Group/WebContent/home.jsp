@@ -12,7 +12,7 @@
 <h1></h1>
 <table class="header1">
 	<tr>
-		<td>Hello ${username.login}! <a href="login?logout=true">Logout</a></td>
+		<td>Hello ${FName.login}! <a href="login?logout=true">Logout</a></td>
 	</tr>
 </table>
 

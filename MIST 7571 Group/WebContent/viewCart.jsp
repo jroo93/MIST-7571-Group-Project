@@ -2,8 +2,7 @@
     pageEncoding="ISO-8859-1"%>
  <%@ page import="dbHelpers.ReadCartQuery"%>
     
-<%
-	//String table = (String) request.getAttribute("table");
+<% 
 	ReadCartQuery qry = new ReadCartQuery("store", "root","Tbillin$j1");
 	qry.doRead();
 %>
@@ -18,7 +17,7 @@
 </head>
 <body>
 
-<form name="checkout" action="checkout.jsp">
+<form name="checkout" action="checkout.html">
 	<table class="pop">
 		<tr>
 			<td colspan="4">		
@@ -28,7 +27,7 @@
 		</tr>
 		<tr>
 			<td colspan="4">
-				<%= qry.getHTMLTable() %>
+				<%= qry.getCartTable() %>
 			</td>
 		</tr>
 		<tr></tr>
