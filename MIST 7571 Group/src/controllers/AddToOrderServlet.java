@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dbHelpers.AddtoCartQuery;
-import model.Cart;
+import dbHelpers.AddToOrderQuery;
+import model.Order;
 
 /**
  * Servlet implementation class RegisterServlet
  */
-@WebServlet(description = "Controller for adding a new product to the database", urlPatterns = { "/AddToCart" })
-public class AddToCartServlet extends HttpServlet {
+@WebServlet(description = "Controller for adding a new product to the database", urlPatterns = { "/AddToOrder" })
+public class AddToOrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddToCartServlet() {
+    public AddToOrderServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,21 +41,24 @@ public class AddToCartServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		int OrderNum = Integer.parseInt(request.getParameter("OrderNum"));
 		int SKU = Integer.parseInt(request.getParameter("SKU"));
 		String ItemName = request.getParameter("ItemName"); 
 		double Price = Double.parseDouble(request.getParameter("Price"));
 		int Qty = Integer.parseInt(request.getParameter("Qty"));
+		double ItemTotal = Double.parseDouble(request.getParameter("ItemTotal"));
+		double OrderTotal = Double.parseDouble(request.getParameter("OrderTotal"));
 		
-		Cart cart = new Cart(SKU, ItemName, Price, Qty);
-		
+		Order order = new Order(OrderNum, SKU, ItemName, Price, Qty, ItemTotal, OrderTotal);
+			
 		// set up an addQuery object
-		AddtoCartQuery aq = new AddtoCartQuery("store","root","Tbillin$j1");
+		AddToOrderQuery aq = new AddToOrderQuery("store","root","Tbillin$j1");
 			
 		// pass the product to addQuery to add to the database
-		aq.doAdd(cart);
+		aq.doAdd(order);
 		
-		// pass execution control to the ViewCartServlet
-		String url = "/ViewCart";
+		// pass execution control to the ViewOrderServlet
+		String url = "/ViewOrder";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

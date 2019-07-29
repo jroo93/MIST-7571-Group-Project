@@ -9,21 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dbHelpers.ReadCartQuery;
+import dbHelpers.ReadOrderQuery;
 
 /**
- * Servlet implementation class ViewCartServlet
+ * Servlet implementation class ViewOrderServlet
  */
 @WebServlet(
-		description = "Controller for reading the cart table", 
-		urlPatterns = { "/ViewCart"})
-public class ViewCartServlet extends HttpServlet {
+		description = "Controller for reading the order table", 
+		urlPatterns = { "/ViewOrder"})
+public class ViewOrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ViewCartServlet() {
+    public ViewOrderServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,17 +39,17 @@ public class ViewCartServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Create a ReadCartQuery helper object
-		ReadCartQuery rq = new ReadCartQuery("store", "root", "Tbillin$j1");
+		// Create a ReadOrderQuery helper object
+		ReadOrderQuery rq = new ReadOrderQuery("store", "root", "Tbillin$j1");
 		
-		// Get the html table from the ReadCartQuery object
+		// Get the html table from the ReadOrderQuery object
 		rq.doRead();
 		
-		String table = rq.getCartTable();
+		String table = rq.getOrderTable();
 		
 		// pass execution control to read.jsp along with the table
 		request.setAttribute("table", table);
-		String url = "/viewCart.jsp";
+		String url = "/order.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

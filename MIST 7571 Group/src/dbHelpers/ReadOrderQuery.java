@@ -10,18 +10,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.Cart; 
+import model.Order; 
 /**
  * @author tanea
  *
  */
-public class ReadCartQuery {
+public class ReadOrderQuery {
 	
 	private Connection connection;
 	private ResultSet results;
 	
 	@SuppressWarnings("deprecation")
-	public ReadCartQuery(String dbName, String uname, String pwd) {
+	public ReadOrderQuery(String dbName, String uname, String pwd) {
 		String url = "jdbc:mysql://localhost:3306/" + dbName;
 		
 		// set up the driver
@@ -45,7 +45,7 @@ public class ReadCartQuery {
 
 	public void doRead() {
 		
-		String query = "select * from cart";
+		String query = "select * from order";
 		
 		try {
 			PreparedStatement ps = this.connection.prepareStatement(query);
@@ -58,31 +58,31 @@ public class ReadCartQuery {
 		
 	}
 	
-	public String getCartTable() {		
+	public String getOrderTable() {		
 		String table = "";
-		table += "<table width='50%' border='1'>";
-		Cart cart = new Cart();
+		table += "<table width=100%>";
+		Order order = new Order();
 		
 		try {			
 			  while(this.results.next()) {
-				  cart = new Cart();
-					cart.setSKU(this.results.getInt("SKU"));
-					cart.setItemName(this.results.getString("ItemName"));
-					cart.setPrice(this.results.getDouble("Price"));
-					cart.setQty(this.results.getInt("Qty"));
+				  order = new Order();
+				  order.setSKU(this.results.getInt("SKU"));
+				  order.setItemName(this.results.getString("ItemName"));
+				  order.setPrice(this.results.getDouble("Price"));
+				  order.setQty(this.results.getInt("Qty"));
 				
 				table += "<tr>";
 				table += "<td>";
-				table += cart.getSKU();
+				table += order.getSKU();
 				table += "</td>";
 				table += "<td>";
-				table += cart.getItemName();
+				table += order.getItemName();
 				table += "</td>";    
 				table += "<td>";
-				table += cart.getPrice();
+				table += order.getPrice();
 				table += "</td>";  
 				table += "<td>";
-				table += cart.getQty(); 
+				table += order.getQty(); 
 				table += "</td>";
 
 				table += "</tr>";

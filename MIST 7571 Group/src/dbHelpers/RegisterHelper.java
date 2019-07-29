@@ -35,7 +35,7 @@ public class RegisterHelper  {
     public void doRegister(String FName, String LName, String Username, String Password, String Email) {
 		try {
 			//Add parameters to the ?'s in the preparedstatement and execute
-			ps.setString(1, FName);
+			ps.setString(1, FName); 
 			ps.setString(2, LName);
 			ps.setString(3, Username);
 			ps.setString(4, Password);
