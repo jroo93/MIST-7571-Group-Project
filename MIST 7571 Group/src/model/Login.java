@@ -33,7 +33,7 @@ public class Login {
 	public void setUsername(String username) {
 		this.username = username;
 		if(username == "" ) {
-			var num = (int)(Math.random() * 10001)
+			var num = (int)(Math.random() * 10001);
 			username = "user" + Integer.toString(num);	
 		}
 	}
