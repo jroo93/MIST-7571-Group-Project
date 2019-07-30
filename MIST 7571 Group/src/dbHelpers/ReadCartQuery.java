@@ -122,7 +122,7 @@ public class ReadCartQuery {
 		table += "</td>";
 		table += "</tr>";
 		table += "</table>";
-		table += "<table border='1'>";
+		table += "<table>";
 		table += "<tr>";
 		table += "<td width='20%'>";
 		table += "<strong>Order Total:</strong>"; 
