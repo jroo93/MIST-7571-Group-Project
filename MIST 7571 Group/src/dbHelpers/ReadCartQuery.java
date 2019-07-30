@@ -61,7 +61,30 @@ public class ReadCartQuery {
 	public String getCartTable() {		
 		String table = "";
 		table += "<table width='50%' border='1'>";
+		table += "<tr>";
+		table += "<td>";
+		table += "<strong>SKU</strong>";
+		table += "</td>";
+		table += "<td>";
+		table += "<strong>Item Name</strong>";
+		table += "</td>";    
+		table += "<td>";
+		table += "<strong>Item Price</strong>";
+		table += "</td>";  
+		table += "<td>";
+		table += "<strong>Qty</strong>"; 
+		table += "</td>";
+		table += "<td>";
+		table += "<strong>Subtotal</strong>"; 
+		table += "</td>";
+		table += "<td>";
+		table += "<strong>Order Total</strong>"; 
+		table += "</td>";
+		table += "</tr>";
+		
 		Cart cart = new Cart();
+		
+
 		
 		try {			
 			  while(this.results.next()) {
@@ -71,6 +94,7 @@ public class ReadCartQuery {
 					cart.setPrice(this.results.getDouble("Price"));
 					cart.setQty(this.results.getInt("Qty"));
 				
+
 				table += "<tr>";
 				table += "<td>";
 				table += cart.getSKU();
@@ -84,6 +108,7 @@ public class ReadCartQuery {
 				table += "<td>";
 				table += cart.getQty(); 
 				table += "</td>";
+				
 
 				table += "</tr>";
 					
