@@ -20,7 +20,7 @@
 <table>
 	<tr>
 		<td>
-<form name="checkout" action="checkout1.html" >
+<form name="checkout" action="checkout.html" >
 	<table class="pop" border='1'>
 		<tr>
 			<td colspan="4">		
