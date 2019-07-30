@@ -132,8 +132,6 @@
 			</form>
 		</td>
 	</tr>
-<<<<<<< HEAD
-=======
 	<tr>
 		<td class="error">
 			Put error msg here
@@ -149,7 +147,6 @@
 			</table >
 		</td>
 	</tr>
->>>>>>> db300cedf76a7561e83a82b79b9bad8246e556f5
 </table>
 	
 </body>
