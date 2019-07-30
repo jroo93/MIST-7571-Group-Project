@@ -80,6 +80,8 @@ public class ReadCartQuery {
 		
 		Cart cart = new Cart();
 		
+		double orderTotal = 0;
+		
 		try {			
 			  while(this.results.next()) {
 				  cart = new Cart();
@@ -88,6 +90,8 @@ public class ReadCartQuery {
 					cart.setPrice(this.results.getDouble("Price"));
 					cart.setQty(this.results.getInt("Qty"));
 					double subTotal = (this.results.getDouble("Price"))*(this.results.getInt("Qty"));
+				  	
+				  	orderTotal += subTotal;
 					
 				table += "<tr>";
 				table += "<td>";
@@ -112,9 +116,6 @@ public class ReadCartQuery {
 			e.printStackTrace();
 		}
 		
-		double orderTotal = 0;
-		double subTotal = 0;
-		orderTotal = orderTotal + subTotal;
 		
 		table += "<tr>";
 		table += "<td colspan='5'>";
