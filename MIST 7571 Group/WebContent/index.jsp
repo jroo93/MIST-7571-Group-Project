@@ -101,7 +101,11 @@
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2">
+		<td class="error">
+			Put error msg here
+		</td>
+		<td></td>
+		<td>
 			<table>
 				<tr>
 					<td class="error">
