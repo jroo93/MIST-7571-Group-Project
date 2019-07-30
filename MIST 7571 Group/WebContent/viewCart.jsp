@@ -17,8 +17,11 @@
 </head>
 <body>
 
-<form name="checkout" action="checkout.html">
-	<table class="pop">
+<table>
+	<tr>
+		<td>
+<form name="checkout" action="checkout1.html" >
+	<table class="pop" border='1'>
 		<tr>
 			<td colspan="4">		
 				<h1>Your Cart</h1> <img src="images/cart.gif" align="right" height="100" width="100" /> 
@@ -33,11 +36,21 @@
 		<tr></tr>
 		<tr>
 			<td>
-				<input type="submit" value="Proceed to Checkout"><br>
+				<input type="submit" value="Proceed to Checkout" onclick="location.href 'checkout1.html'"><br>
 			</td> 
-						 
+			<td>
+			
+			<td>
+				<input type="submit" value="Continue Shopping" onclick="parent.window.close()"><br>
+			</td> 
+
 		</tr>
 	</table>
 </form>
+</td>
+</tr>
+</table>
+
+
 </body>
 </html>
