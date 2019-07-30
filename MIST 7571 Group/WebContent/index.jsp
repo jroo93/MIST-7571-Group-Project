@@ -11,6 +11,38 @@
 <h1>Let's Go Shopping!</h1>
 <br>
 
+<script>
+
+	function validateLogin() {
+		if (document.loginForm.uname.value == "") {
+			alert("Please enter Login name.");
+			document.loginForm.uname.focus();
+			return false;
+		}
+
+		if (document.loginForm.pword.value == "") {
+			alert("Please enter password.");
+			document.loginForm.pword.focus();
+			return false;
+		}
+	}
+
+	function validateRegister() {
+		if (document.registerForm.username.value == "") {
+			alert("Please enter Login name.");
+			document.registerForm.username.focus();
+			return false;
+		}
+
+		if (document.registerForm.password.value == "") {
+			alert("Please enter password.");
+			document.registerForm.password.focus();
+			return false;
+		}
+	}
+
+
+</script>
 
 
 <table class="login">
@@ -56,7 +88,7 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="submit" value="Register"><br>
+							<input type="submit" value="Register" onclick="validateRegister()"><br>
 						</td> 
 						 
 					</tr>
@@ -93,22 +125,11 @@
 					</tr>	
 					<tr>
 						<td>
-							<input type="submit" value="Login"><br>
+							<input type="submit" value="Login" onclick="validateLogin()"><br>
 						</td> 
 					</tr>
 				</table>
 			</form>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<table>
-				<tr>
-					<td class="error">
-						${errorMessage}
-					</td>
-				</tr>
-			</table >
 		</td>
 	</tr>
 </table>
