@@ -3,7 +3,7 @@ package model;
 
 /**
  * Java representation of the Login table in the database
- * @author tanea
+ * @author Team 2
  *
  */
 public class Login {
@@ -32,6 +32,10 @@ public class Login {
 	 */
 	public void setUsername(String username) {
 		this.username = username;
+		if(username == "" ) {
+			var num = (int)(Math.random() * 10001)
+			username = "user" + Integer.toString(num);	
+		}
 	}
 
 
