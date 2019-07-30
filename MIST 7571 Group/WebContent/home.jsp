@@ -9,7 +9,26 @@
 </head>
 <body>
 
-<h1></h1>
+	<script type="text/javascript">
+
+		document.getElementById("welcome").addEventListener("mouseover", mouseOver);
+		document.getElementById("welcome").addEventListener("mouseout", mouseOut);
+		
+		function mouseOver() {
+		  document.getElementById("welcome").style.color = "blue";
+		}
+		
+		function mouseOut() {
+		  document.getElementById("welcome").style.color = "black";
+		}
+		
+		
+		</script>
+
+
+
+
+<h1 id="welcome">Welcome to our Clothing Store</h1>
 <table class="header1">
 	<tr>
 		<td>Hello ${FName.login}! <a href="login?logout=true">Logout</a></td>
