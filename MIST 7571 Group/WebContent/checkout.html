@@ -1,13 +1,18 @@
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Order Checkout</title>
 	<link rel="stylesheet" type="text/css" href="shopping.css" /> 
+</head>
+<body>
+
+<h1></h1>
+<table class="header1">
+	<tr>
+		<td> <a href="login?logout=true">Logout</a></td>
+	</tr>
+</table>
 	
 	<script type="text/javascript">
 		function sameAddress()
@@ -41,17 +46,10 @@
 				var qty = parseInt(document.getElementById("qty").value);
 			var orderTotal;	
 			
-			subTotal = 5.00*3.57;
+			subTotal = price*qty;
 			document.getElementById("subTotal").value = subTotal.toFixed(2);
 		}
 
-		//called as onclick event to cleanly process multiple functions
-		function processOrder() {
-			
-			orderConfirmation();
-			requiredFields();
-		}
-		
 		//requires user to confirm order, or clear all the form fields
 		function orderConfirmation() {
 			
@@ -67,101 +65,8 @@
   			}
   			document.getElementById("confirmMsg").innerHTML = msg;
 		}
-		
-
-		//alerts user of required fields.  
-		//This does not block the order, just lets the user know that the order will not be processed if the information is missing.
-		function requiredFields() {
-
-			if (document.forms["order"]["fName"].value == "" || document.forms["order"]["fNameShip"].value == "") {
-				alert("First Name cannot be blank to process your order correctly.");
-				return false;
-			}
-			if (document.forms["order"]["lName"].value == document.forms["order"]["lNameShip"].value == "") {
-				alert("Last Name cannot be blank to process your order correctly.");
-				return false;
-			}
-			if (document.forms["order"]["add1"].value == "" || document.forms["order"]["add1Ship"].value == "") {
-				alert("Street address cannot be blank to process your order correctly.");
-				return false;
-			}
-			if (document.forms["order"]["city"].value == "" || document.forms["order"]["cityShip"].value == "") {
-				alert("City cannot be blank to process your order correctly.");
-				return false;
-			}
-			if (document.forms["order"]["state"].value == "" || document.forms["order"]["stateShip"].value == "") {
-				alert("City cannot be blank to process your order correctly.");
-				return false;
-			}
-			if (document.forms["order"]["zip"].value == "" || document.forms["order"]["zipShip"].value == "") {
-				alert("City cannot be blank to process your order correctly.");
-				return false;
-			}
-			if (document.forms["order"]["billName"].value == "") {
-				alert("Bill name cannot be blank to process your order correctly.");
-				return false;
-			}
-			if (document.forms["order"]["cardNo"].value == "") {
-				alert("Card number cannot be blank to process your order correctly.");
-				return false;
-			}
-			if (document.forms["order"]["expDt"].value == "") {
-				alert("Card expiration date cannot be blank to process your order correctly.");
-				return false;
-			}
-
-		}
-		
-			/* for (var i=0; i<0, i++)
-			{
-				orderTotal = subTotal;
-				
-			}
-		} */
-		
-/* 		function getCartTable()
-		{
 			
-			public String getCartTable() {		
-				String table = "";
-				table += "<table width=100%>";
-				Cart cart = new Cart();
-				
-				try {			
-					  while(this.results.next()) {
-						  cart = new Cart();
-							cart.setSKU(this.results.getInt("SKU"));
-							cart.setItemName(this.results.getString("ItemName"));
-							cart.setPrice(this.results.getDouble("Price"));
-							cart.setQty(this.results.getInt("Qty"));
-						
-						table += "<tr>";
-						table += "<td>";
-						table += cart.getSKU();
-						table += "</td>";
-						table += "<td>";
-						table += cart.getItemName();
-						table += "</td>";    
-						table += "<td>";
-						table += cart.getPrice();
-						table += "</td>";  
-						table += "<td>";
-						table += cart.getQty(); 
-						table += "</td>";
-
-						table += "</tr>";
-							
-					}
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-				
-				table += "</table>";
-				return table;
-			}
-		 */
-	
-		</script>
+	</script>
 </head>
 <body>
 
@@ -175,10 +80,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4">
-				
-				
-		
+			<td colspan="4">		
 			</td>
 		</tr>
 	</table>	
@@ -428,61 +330,8 @@
 			<td>
 				State: 
 			</td>
-			<td> <input type="text" id="state" name="state" size="2"/>
-			<!--  
-				<select>	
-					<option value="AL">AL</option>
-					<option value="AK">AK</option>
-					<option value="AZ">AZ</option>
-					<option value="AR">AR</option>
-					<option value="CA">CA</option>
-					<option value="CO">CO</option>
-					<option value="CT">CT</option>
-					<option value="DE">DE</option>
-					<option value="FL">FL</option>
-					<option value="GA">GA</option>
-					<option value="HI">HI</option>
-					<option value="ID">ID</option>
-					<option value="IL">IL</option>
-					<option value="IN">IN</option>
-					<option value="IA">IA</option>
-					<option value="KS">KS</option>
-					<option value="KY">KY</option>
-					<option value="LA">LA</option>
-					<option value="ME">ME</option>
-					<option value="MD">MD</option>
-					<option value="MA">MA</option>
-					<option value="MI">MI</option>
-					<option value="MN">MN</option>
-					<option value="MS">MS</option>
-					<option value="MO">MO</option>
-					<option value="MT">MT</option>
-					<option value="NE">NE</option>
-					<option value="NV">NV</option>
-					<option value="NH">NH</option>
-					<option value="NJ">NJ</option>
-					<option value="NM">NM</option>
-					<option value="NY">NY</option>
-					<option value="NC">NC</option>
-					<option value="ND">ND</option>
-					<option value="OH">OH</option>
-					<option value="OK">OK</option>
-					<option value="OR">OR</option>
-					<option value="PA">PA</option>
-					<option value="RI">RI</option>
-					<option value="SC">SC</option>
-					<option value="SD">SD</option>
-					<option value="TN">TN</option>
-					<option value="TX">TX</option>
-					<option value="UT">UT</option>
-					<option value="VT">VT</option>
-					<option value="VA">VA</option>
-					<option value="WA">WA</option>
-					<option value="WV">WV</option>
-					<option value="WI">WI</option>
-					<option value="WY">WY</option>					
-				</select>
-				-->
+			<td> 
+				<input type="text" id="state" name="state" size="2"/>
 			</td>
 			<td>
 			</td>
@@ -501,7 +350,7 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="submit" value="Submit Order" id="submitOrder" onclick="processOrder()" ><br>
+				<input type="submit" value="Submit Order" id="submitOrder" onclick="orderConfirmation()" ><br>
 			</td> 						 
 		</tr>
 	</table>
