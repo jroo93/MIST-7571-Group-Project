@@ -44,6 +44,22 @@
 			subTotal = 5.00*3.57;
 			document.getElementById("subTotal").value = subTotal.toFixed(2);
 		}
+
+		//requires user to confirm order, or clear all the form fields
+		function orderConfirmation() {
+			
+			var msg;
+			var form = document.getElementById("order");
+  			var r = confirm("Click 'OK' to confirm your order.");
+  			
+			if (r == true) {
+   				msg = "Thank you for your order!";
+  			} else {
+    			msg = "Your order has been canceled!";
+				form.reset();
+  			}
+  			document.getElementById("confirmMsg").innerHTML = msg;
+		}
 		
 		
 			/* for (var i=0; i<0, i++)
@@ -435,11 +451,11 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="submit" value="Submit Order" id="submitOrder"><br>
+				<input type="submit" value="Submit Order" id="submitOrder" onclick="orderConfirmation()" ><br>
 			</td> 						 
 		</tr>
 	</table>
-	
+	<p id="confirmMsg"></p>
 </form>
 
 </body>
