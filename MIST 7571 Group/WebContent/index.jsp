@@ -13,6 +13,7 @@
 
 <script>
 
+	//alerts user that the login username and password should not be blank
 	function validateLogin() {
 		if (document.loginForm.uname.value == "") {
 			alert("Please enter Login name.");
@@ -27,6 +28,7 @@
 		}
 	}
 
+	//alerts user that the registration username and password should not be blank
 	function validateRegister() {
 		if (document.registerForm.username.value == "") {
 			alert("Please enter Login name.");
@@ -132,24 +134,6 @@
 			</form>
 		</td>
 	</tr>
-<<<<<<< HEAD
-=======
-	<tr>
-		<td class="error">
-			Put error msg here
-		</td>
-		<td></td>
-		<td>
-			<table>
-				<tr>
-					<td class="error">
-						${errorMessage}
-					</td>
-				</tr>
-			</table >
-		</td>
-	</tr>
->>>>>>> db300cedf76a7561e83a82b79b9bad8246e556f5
 </table>
 	
 </body>
