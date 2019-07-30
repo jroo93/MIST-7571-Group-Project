@@ -17,6 +17,9 @@
 </head>
 <body>
 
+<table>
+	<tr>
+		<td>
 <form name="checkout" action="checkout.html">
 	<table class="pop">
 		<tr>
@@ -33,11 +36,21 @@
 		<tr></tr>
 		<tr>
 			<td>
-				<input type="submit" value="Proceed to Checkout"><br>
+				<input type="submit" value="Proceed to Checkout" onclick="location.href 'checkout1.html'"><br>
 			</td> 
-						 
+			<td>
+			
+			<td>
+				<input type="submit" value="Continue Shopping" onclick="parent.window.close()"><br>
+			</td> 
+
 		</tr>
 	</table>
 </form>
+		</td>
+	</tr>
+</table>
+
+
 </body>
 </html>
