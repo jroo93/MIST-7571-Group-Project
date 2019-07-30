@@ -45,6 +45,13 @@
 			document.getElementById("subTotal").value = subTotal.toFixed(2);
 		}
 
+		//called as onclick event to cleanly process multiple functions
+		function processOrder() {
+			
+			orderConfirmation();
+			requiredFields();
+		}
+		
 		//requires user to confirm order, or clear all the form fields
 		function orderConfirmation() {
 			
@@ -61,6 +68,49 @@
   			document.getElementById("confirmMsg").innerHTML = msg;
 		}
 		
+
+		//alerts user of required fields.  
+		//This does not block the order, just lets the user know that the order will not be processed if the information is missing.
+		function requiredFields() {
+
+			if (document.forms["order"]["fName"].value == "" || document.forms["order"]["fNameShip"].value == "") {
+				alert("First Name cannot be blank to process your order correctly.");
+				return false;
+			}
+			if (document.forms["order"]["lName"].value == document.forms["order"]["lNameShip"].value == "") {
+				alert("Last Name cannot be blank to process your order correctly.");
+				return false;
+			}
+			if (document.forms["order"]["add1"].value == "" || document.forms["order"]["add1Ship"].value == "") {
+				alert("Street address cannot be blank to process your order correctly.");
+				return false;
+			}
+			if (document.forms["order"]["city"].value == "" || document.forms["order"]["cityShip"].value == "") {
+				alert("City cannot be blank to process your order correctly.");
+				return false;
+			}
+			if (document.forms["order"]["state"].value == "" || document.forms["order"]["stateShip"].value == "") {
+				alert("City cannot be blank to process your order correctly.");
+				return false;
+			}
+			if (document.forms["order"]["zip"].value == "" || document.forms["order"]["zipShip"].value == "") {
+				alert("City cannot be blank to process your order correctly.");
+				return false;
+			}
+			if (document.forms["order"]["billName"].value == "") {
+				alert("Bill name cannot be blank to process your order correctly.");
+				return false;
+			}
+			if (document.forms["order"]["cardNo"].value == "") {
+				alert("Card number cannot be blank to process your order correctly.");
+				return false;
+			}
+			if (document.forms["order"]["expDt"].value == "") {
+				alert("Card expiration date cannot be blank to process your order correctly.");
+				return false;
+			}
+
+		}
 		
 			/* for (var i=0; i<0, i++)
 			{
@@ -451,7 +501,7 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="submit" value="Submit Order" id="submitOrder" onclick="orderConfirmation()" ><br>
+				<input type="submit" value="Submit Order" id="submitOrder" onclick="processOrder()" ><br>
 			</td> 						 
 		</tr>
 	</table>
