@@ -9,52 +9,7 @@
 </head>
 <body>
 
-	<script type="text/javascript">
-
-		document.getElementById("welcome").addEventListener("mouseover", mouseOver);
-		document.getElementById("welcome").addEventListener("mouseout", mouseOut);
-		
-		function mouseOver() {
-		  document.getElementById("welcome").style.color = "blue";
-		}
-		
-		function mouseOut() {
-		  document.getElementById("welcome").style.color = "black";
-		}
-		
-		
-
-		document.getElementById("clothing").addEventListener("mouseover", mouseOver);
-		document.getElementById("clothing").addEventListener("mouseout", mouseOut);
-		
-		function mouseOver() {
-		  document.getElementById("clothing").style.color = "blue";
-		}
-		
-		function mouseOut() {
-		  document.getElementById("clothing").style.color = "black";
-		}
-
-
-
-
-		  document.getElementById("electronics").addEventListener("mouseover", mouseOver);
-		document.getElementById("electronics").addEventListener("mouseout", mouseOut);
-		
-		function mouseOver() {
-		  document.getElementById("electronics").style.color = "blue";
-		}
-		
-		function mouseOut() {
-		  document.getElementById("electronics").style.color = "black";
-		}
-
-
-
-
-		</script>
-
-<h1 id="welcome">Welcome to our Clothing Store</h1>
+<h1 id="welcome">Welcome to our Clothing Store!</h1>
 <table class="header1">
 	<tr>
 		<td>Hello ${FName.login}! <a href="login?logout=true">Logout</a></td>
@@ -79,8 +34,8 @@
 					<td colspan="2"><a href="clearance.jsp"><img src="images/clearance.png" height="275" width="700" alt="Clearance Sale"/></a></td>
 				</tr>
 				<tr class="thumbnail">
-					<td><img src="images/fashion.jpg" height="350" width="500" alt="Clothing" id="clothing"/></td>
-					<td><img src="images/electronics.jpg" height="350" width="500" alt="Electronics" id="electronics"/></td>
+					<td id="clothing"><img src="images/fashion.jpg" height="350" width="500" alt="Clothing" id="clothing"/></td>
+					<td id="electronics"><img src="images/electronics.jpg" height="350" width="500" alt="Electronics" id="electronics"/></td>
 				</tr>
 				<tr class="thumbnail">
 					<td><a href="clothing.jsp"><img src="images/cshop.png" height="50" width="150" alt="Clothing" /></a></td>
@@ -91,4 +46,52 @@
 	</tr>
 </table> 	
 </body>
+
+<script type="text/javascript">
+
+	document.getElementById("welcome").addEventListener("mouseover", welcomeOver);
+	document.getElementById("welcome").addEventListener("mouseout", welcomeOut);
+	
+	function welcomeOver() {
+	  document.getElementById("welcome").style.color = "red";
+	}
+	
+	function welcomeOut() {
+	  document.getElementById("welcome").style.color = "black";
+    }
+    
+
+//*****************************************************************************************
+
+
+
+    document.getElementById("clothing").addEventListener("mouseover", clothingOver);
+	document.getElementById("clothing").addEventListener("mouseout", clothingOut);
+	
+	function clothingOver() {
+	  document.getElementById("clothing").style.color = "pink";
+	}
+	
+	function clothingOut() {
+	  document.getElementById("clothing").style.color = "purple";
+	}
+
+
+//*****************************************************************************************
+
+
+    document.getElementById("electronics").addEventListener("mouseover", electronicsOver);
+	document.getElementById("electronics").addEventListener("mouseout", electronicsOut);
+	
+	function electronicsOver() {
+	  document.getElementById("electronics").style.color = "blue";
+	}
+	
+	function electronicsOut() {
+	  document.getElementById("electronics").style.color = "green";
+	}
+	
+	</script>
+
+
 </html>
