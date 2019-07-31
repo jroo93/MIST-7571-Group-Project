@@ -34,8 +34,8 @@
 					<td colspan="2"><a href="clearance.jsp"><img src="images/clearance.png" height="275" width="700" alt="Clearance Sale"/></a></td>
 				</tr>
 				<tr class="thumbnail">
-					<td id="clothing"><img src="images/fashion.jpg" height="350" width="500" alt="Clothing" id="clothing"/></td>
-					<td id="electronics"><img src="images/electronics.jpg" height="350" width="500" alt="Electronics" id="electronics"/></td>
+					<td id="clothing"><img src="images/fashion.jpg" height="350" width="500" alt="Clothing"/></td>
+					<td id="electronics"><img src="images/electronics.jpg" height="350" width="500" alt="Electronics"/></td>
 				</tr>
 				<tr class="thumbnail">
 					<td><a href="clothing.jsp"><img src="images/cshop.png" height="50" width="150" alt="Clothing" /></a></td>
