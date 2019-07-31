@@ -10,10 +10,21 @@
 <h1></h1>
 <table class="header1">
 	<tr>
-		<td> <a href="login?logout=true">Logout</a></td>
+		<td><a href="home.jsp">Continue Shopping</a> <a href="login?logout=true">Logout</a></td>
 	</tr>
 </table>
+
+<form name=viewCart action=ViewCart method=get >
+<table class="header2">
+	<tr>		
+		<td class="right"><a href="viewCart.jsp" target="popup" onclick="window.open('viewCart.jsp','popup','width=600,height=600,scrollbars=no,resizable=no'); 
+						return false;"><img src="images/cart.jpg" height="50" width="100" /></a></td>
+
+	</tr>
+</table>
+</form>
 	
+
 	<script type="text/javascript">
 		function sameAddress()
 		{
@@ -39,17 +50,13 @@
 
 		}
 		
-		function subTotal() 
+		function getOrderTotal()
 		{
-			var subTotal;
-				var price = parseInt(document.getElementById("price").value);
-				var qty = parseInt(document.getElementById("qty").value);
-			var orderTotal;	
+			var orderTotal;
 			
-			subTotal = price*qty;
-			document.getElementById("subTotal").value = subTotal.toFixed(2);
+			orderTotal = document.getElementByID("orderTotal");			
 		}
-
+		  
 
 		//called as onclick event to cleanly process multiple functions
 		function processOrder() {
@@ -57,8 +64,8 @@
 			orderConfirmation();
 			requiredFields();
 		}
-
-
+		
+		
 		//requires user to confirm order, or clear all the form fields
 		function orderConfirmation() {
 			
@@ -72,7 +79,6 @@
     			msg = "Your order has been canceled!";
 				form.reset();
 				window.location.replace("checkout.html");
-
   			}
   			document.getElementById("confirmMsg").innerHTML = msg;
 		}
@@ -80,10 +86,11 @@
 		//alerts user of required fields.  
 		//This does not block the order, just lets the user know that the order will not be processed if the information is missing.
 		function requiredFields() {
-
+			
 			if (document.forms["order"]["fName"].value == "" || document.forms["order"]["fNameShip"].value == "") {
 				alert("First Name cannot be blank to process your order correctly.");
-				return false;
+				window.location = '/checkout.html';
+				return false; 
 			}
 			if (document.forms["order"]["lName"].value == document.forms["order"]["lNameShip"].value == "") {
 				alert("Last Name cannot be blank to process your order correctly.");
@@ -117,10 +124,8 @@
 				alert("Card expiration date cannot be blank to process your order correctly.");
 				return false;
 			}
-
 		}
 		
-
 	</script>
 </head>
 <body>
@@ -135,18 +140,17 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4">		
-			</td>
+			<td></td>
 		</tr>
-	</table>	
-	<table>
-	<tr>
-	<td>
-	<table>	
+	</table>
+
+		
+	<table class='checkout'>
 		<tr>
 			<td colspan="5"> 
 				<h3>Shipping Information</h3> 
 			</td>
+			<td rowspan='6' width='55%'></td> 
 		</tr>
 		<tr>
 			<td colspan="5">
@@ -187,7 +191,7 @@
 			</td>		
 		</tr>
 	</table>
-	<table class="checkout">
+	<table class='checkout'>
 		<tr>
 			<td>
 				City: 
@@ -262,43 +266,36 @@
 			<td>
 				<input type="text" id="zipShip" maxlength="5"/>
 			</td> 
-		</tr>
-	</table>
-	</td>
-	
-	<td width=60%>
-	
-	</td>
-	
-	</tr>
+			<td width='55%'></td> 
+		</tr>	
 	<tr> 
-		<td colspan="8">
+		<td colspan="9">
 				<hr>
 		</td>
 	</tr> 
 	</table>
 	
 	<table>
-	<tr>
-	<td> 
-	<table> 	
 		<tr>
-			<td colspan="4">
+			<td colspan='2'>
 				<h3>Payment Information</h3>
-			</td>
+			</td> 
+			<td rowspan='6' width='80%'></td> 
 		</tr>
 		<tr>
-			<td colspan="5">
+			<td colspan='2'>
 				<input type="checkbox" name="blank" style="display:none" /> <br>				
 			</td>
+			
 		</tr> 
+		
 		<tr>
 			<td>
 				Name on Card:
 			</td>
 			<td>
 				<input type="text" id="billName" />
-			</td> 
+			</td>  		
 		</tr>
 		<tr>
 			<td>
@@ -306,7 +303,7 @@
 			</td>
 			<td>
 				<input type="text" id="cardNo" maxlength="16"/>
-			</td> 
+			</td>  	
 		</tr>	
 		<tr>
 			<td>
@@ -314,28 +311,33 @@
 			</td>
 			<td>
 				<input type="text" id="expDt" value="mm/yyyy" maxlength="7"/>
-			</td> 
+			</td>  	
 		</tr>
 		<tr>
-			<td colspan="5">
+			<td colspan="2">
 				<input type="text" name="blank" style="display:none" /> <br>				
 			</td>
 		</tr> 
+		<tr> 
+		<td colspan='5' >
+				<hr>
+		</td>
+	</tr> 	
 	</table>
-	</td>
-	<td>
-	<table>
+
+	
+	<table class='checkout'>
 		<tr>
 			<td colspan="5">
 				<h3>Billing Address</h3>
 			</td>
+			<td rowspan='7' width='55%'></td> 
+		</tr>
 		<tr>
 			<td colspan="5">
 				<input type="checkbox" name="sameAdd" value="sameAdd" id="sameAdd" onclick="sameAddress();">Same as Shipping<br>				
 			</td>
-		</tr> 	
-			
-	
+		</tr> 	 
 		<tr>
 			<td>
 				First Name: 
@@ -350,15 +352,13 @@
 			</td>
 			<td>
 				<input type="text" id="lName" />
-			</td>
-			<td width=30%>
-			</td>
+			</td> 
 		</tr>
 		<tr>
 			<td>
 				Address Line1: 
 			</td>
-			<td>
+			<td colspan="4">
 				<input type="text" id="add1" />
 			</td>		
 			<tr>
@@ -367,12 +367,12 @@
 			<td>
 				Address Line2: 
 			</td>
-			<td>
+			<td colspan="4">
 				<input type="text" id="add2" />
 			</td>		
 		</tr>
 	</table>
-	<table>
+	<table class='checkout'>
 		<tr>
 			<td>
 				City: 
@@ -396,16 +396,15 @@
 			<td>
 				<input type="text" id="zip" maxlength="5"/>
 			</td> 
+			<td width='55%'></td> 
 		</tr>
-	</table>
- 	</table>
-	
+	</table> 
 	<table>
 		<tr>
 		</tr>
 		<tr>
 			<td>
-				<input type="submit" value="Submit Order" id="submitOrder" onclick="orderConfirmation()" ><br>
+				<input type="submit" value="Submit Order" id="submitOrder" onclick="requiredFields()" ><br>
 			</td> 						 
 		</tr>
 	</table>
