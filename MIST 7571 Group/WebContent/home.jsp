@@ -53,7 +53,7 @@
 	document.getElementById("welcome").addEventListener("mouseout", welcomeOut);
 	
 	function welcomeOver() {
-	  document.getElementById("welcome").style.color = "red";
+	  document.getElementById("welcome").style.color = "Red";
 	}
 	
 	function welcomeOut() {
@@ -91,15 +91,6 @@
 	  document.getElementById("electronics").style.color = "green";
 	}
 	
-
-//*****************************************************************************************
-
-
-	$('.home td').on('mouseover', function () {
-    $('.home td').not(this).addClass('fade');
-}).on('mouseout', function() {
-    $('.home td').removeClass('fade');
-});
 	</script>
 
 
