@@ -34,12 +34,12 @@
 					<td colspan="2"><a href="clearance.jsp"><img src="images/clearance.png" height="275" width="700" alt="Clearance Sale"/></a></td>
 				</tr>
 				<tr class="thumbnail">
-					<td id="clothing"><img src="images/fashion.jpg" height="350" width="500" alt="Clothing"/></td>
-					<td id="electronics"><img src="images/electronics.jpg" height="350" width="500" alt="Electronics"/></td>
+					<td ><img src="images/fashion.jpg" height="350" width="500" alt="Clothing"/></td>
+					<td ><img src="images/electronics.jpg" height="350" width="500" alt="Electronics"/></td>
 				</tr>
 				<tr class="thumbnail">
-					<td><a href="clothing.jsp"><img src="images/cshop.png" height="50" width="150" alt="Clothing" /></a></td>
-					<td><a href="electronics.jsp"><img src="images/eshop.png" height="50" width="150" alt="Electronics"/></a></td>
+					<td id="clothing" ><a href="clothing.jsp"><img src="images/cshop.png" height="50" width="150" alt="Clothing" /></a></td>
+					<td id="electronics" ><a href="electronics.jsp"><img src="images/eshop.png" height="50" width="150" alt="Electronics"/></a></td>
 				</tr>
 			</table>
 		</td>
