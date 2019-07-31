@@ -60,9 +60,8 @@
 
 		//called as onclick event to cleanly process multiple functions
 		function processOrder() {
-			
-			orderConfirmation();
 			requiredFields();
+			orderConfirmation();
 		}
 		
 		
@@ -404,7 +403,7 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="submit" value="Submit Order" id="submitOrder" onclick="requiredFields()" ><br>
+				<input type="submit" value="Submit Order" id="submitOrder" onclick="processOrder()" ><br>
 			</td> 						 
 		</tr>
 	</table>
