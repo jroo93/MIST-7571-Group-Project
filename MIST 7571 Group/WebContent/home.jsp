@@ -91,6 +91,15 @@
 	  document.getElementById("electronics").style.color = "green";
 	}
 	
+
+//*****************************************************************************************
+
+
+	$('.home td').on('mouseover', function () {
+    $('.home td').not(this).addClass('fade');
+}).on('mouseout', function() {
+    $('.home td').removeClass('fade');
+});
 	</script>
 
 
